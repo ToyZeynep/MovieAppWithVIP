@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movie List View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MovieList" id="Y6W-OH-hqX" customClass="MovieListViewController" customModule="MovieAppVIP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fYl-6f-BIo">
+                                <rect key="frame" x="20" y="69" width="299" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivj-Ys-kOa">
+                                <rect key="frame" x="327" y="69" width="67" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="0dC-RS-zPU"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cgP-zy-f6p"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bcH-MU-j0d">
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="lHo-V2-sLr"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="0th-g8-WeV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ivj-Ys-kOa" firstAttribute="top" secondItem="fYl-6f-BIo" secondAttribute="top" id="3RA-hM-Zqn"/>
+                            <constraint firstItem="fYl-6f-BIo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="6Bw-Je-iIm"/>
+                            <constraint firstItem="ivj-Ys-kOa" firstAttribute="height" secondItem="fYl-6f-BIo" secondAttribute="height" multiplier="0.911765" id="Jo7-gW-wFP"/>
+                            <constraint firstItem="bcH-MU-j0d" firstAttribute="top" secondItem="fYl-6f-BIo" secondAttribute="bottom" constant="5" id="Y1O-d2-wfs"/>
+                            <constraint firstItem="bcH-MU-j0d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="cHt-Uo-tpK"/>
+                            <constraint firstItem="ivj-Ys-kOa" firstAttribute="leading" secondItem="fYl-6f-BIo" secondAttribute="trailing" constant="8" id="dsp-Q4-z2O"/>
+                            <constraint firstItem="fYl-6f-BIo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="duB-P9-FRe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bcH-MU-j0d" secondAttribute="trailing" id="eOE-Cv-52W"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bcH-MU-j0d" secondAttribute="bottom" id="j5e-Uw-GOx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ivj-Ys-kOa" secondAttribute="trailing" constant="20" id="wvv-aZ-pP6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="movieListSearchButton" destination="ivj-Ys-kOa" id="yKU-TR-aSh"/>
+                        <outlet property="movieListSearchTextField" destination="fYl-6f-BIo" id="ts9-h9-Syn"/>
+                        <outlet property="movieListTableView" destination="bcH-MU-j0d" id="hyZ-sj-F5U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.637681159420293" y="-72.321428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
