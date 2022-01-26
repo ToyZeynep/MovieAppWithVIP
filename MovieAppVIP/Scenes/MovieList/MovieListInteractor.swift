@@ -28,7 +28,7 @@ class MovieListInteractor: MovieListBusinessLogic, MovieListDataStore {
 
     func fetchMovies(request: MovieList.Fetch.Request) {
         // 2
-        worker.getNews(request: MovieListResponse.Request(s: request.s)) { [weak self] result in
+        worker.getMovieList(request: MovieListResponse.Request(s: request.s)) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.movieList = response.movies

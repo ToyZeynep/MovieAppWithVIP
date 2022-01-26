@@ -109,5 +109,17 @@ struct MovieDetailsResponse: Codable{
         case website = "Website"
         case response = "Response"
     }
+    
+    struct Request: Encodable {
+        /**
+         https://newsapi.org/docs/endpoints/top-headlines
+         Can be fill according to documentation. I just added country statically
+         */
+        let i: String
+
+        init(i: String) {
+            self.i = i
+        }
+    }
 }
 

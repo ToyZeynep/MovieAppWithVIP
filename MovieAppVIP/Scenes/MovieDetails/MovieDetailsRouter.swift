@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+protocol MovieDetailsRoutingLogic: AnyObject {
+
+}
+
+protocol MovieDetailsDataPassing: AnyObject {
+    var dataStore: MovieDetailsDataStore? { get }
+    
+}
+
+final class MovieDetailsRouter: MovieDetailsRoutingLogic, MovieDetailsDataPassing {
+
+    weak var viewController: MovieDetailsViewController?
+    var dataStore: MovieDetailsDataStore?
+
+}

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Foundation
 
 // swiftlint:disable nesting
 enum MovieList {

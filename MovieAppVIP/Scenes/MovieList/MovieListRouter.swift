@@ -24,11 +24,11 @@ final class MovieListRouter: MovieListRoutingLogic, MovieListDataPassing {
 
     func routeToMovieDetail(index: Int) {
         let storyBoard = UIStoryboard(name: "MovieDetails", bundle: nil)
-        let destVC: MovieDetailsViewController = storyBoard.instantiateViewController(
-            identifier: "DetailViewController"
-        )
+        let destVC: MovieDetailsViewController = storyBoard.instantiateViewController(identifier: "MovieDetails")
         // data passing sample
-      //  destVC.router?.dataStore?.article = dataStore?.movieList?[index]
-      //  self.viewController?.navigationController?.pushViewController(destVC, animated: true)
+        var currentMovie = dataStore?.movieList?[index]
+         destVC.router?.dataStore?.imdbId = currentMovie!.imdbID ?? "tt7642818"
+        destVC.modalPresentationStyle = .fullScreen
+        self.viewController?.present(destVC, animated: true, completion: nil)
     }
 }

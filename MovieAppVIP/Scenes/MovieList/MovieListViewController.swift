@@ -81,6 +81,7 @@ extension MovieListViewController: MovieListDisplayLogic {
     func displayMovies(viewModel: MovieList.Fetch.ViewModel) {
         self.viewModel = viewModel
         movieListTableView.reloadData()
+        
     }
 }
 
